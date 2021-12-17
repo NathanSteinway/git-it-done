@@ -6,9 +6,26 @@ var getUserRepos = function(user) {
     //Requesting info from URL
     fetch(apiUrl).then(function(response) {
         response.json().then(function(data) {
-            console.log(data);
-        });
+            displayRepos(data, user);
+          });
     });
 };
 
-getUserRepos();
+var userFormEl = document.querySelector("#user-form");
+var nameInputEl = document.querySelector("#username");
+
+var formSubmitHandler = function(event) {
+    event.preventDefault();
+    console.log(event);
+  };
+
+userFormEl.addEventListener("submit", formSubmitHandler);
+      
+  
+
+
+
+
+
+
+
